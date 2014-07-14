@@ -1,19 +1,5 @@
 /bin/bash
 
-# Stop all interfaces in monitor mode
-clear
-echo " Stopping all wireless cards currently in monitor mode....."
-
-# Get interfaces in mon mode
-rm interfaces
-airmon-ng | grep mon | awk {'print $1'}>interfaces
-
-# Stop all interfaces in monitor mode
-for int in $(cat interfaces);
-do
-	airmon-ng stop $int
-done
-sleep 5
 clear
 
 # Introduction
@@ -21,6 +7,28 @@ echo "++++++++++++++++++++++++++++++++++++++"
 echo "       WPA/WPA2 cracking demo"
 echo "++++++++++++++++++++++++++++++++++++++"
 sleep 3
+
+# Getting interfaces that are in monitor mode
+FILE=interfaces.txt
+
+if [ -f $FILE ];
+then
+echo "File $FILE exists."
+echo " Removing interfaces file from previous crack."
+rm interfaces.txt
+else
+echo "File $FILE does not exist script will now continue."
+fi
+
+airmon-ng | grep mon | awk {'print $1'}>interfaces.txt
+
+# Stop all interfaces in monitor mode
+for int in $(cat interfaces);
+do
+airmon-ng stop $int
+done
+sleep 5
+clear
 
 # List available cards
 airmon-ng
@@ -39,7 +47,7 @@ rm *.kismet.*
 xterm -e airodump-ng mon0 &
 xterm -e wash -i mon0 -C &
 sleep 2
-clear 
+clear
 
 # Get required info from user
 echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
@@ -54,8 +62,8 @@ read -e BSSID
 sleep 5
 
 # Echo out test info
-echo "Channel Number:" $CHAN 
-echo "Session to be saved:" $SESSION 
+echo "Channel Number:" $CHAN
+echo "Session to be saved:" $SESSION
 echo "BSSID to be cracked:" $BSSID
 sleep 3
 
@@ -75,7 +83,7 @@ echo "List of available dump files:"
 num=1
 for ls in $(ls -l *.cap | awk {'print $9'});
 do
-	echo "File $((num++)): $ls"
+echo "File $((num++)): $ls"
 done
 echo -n "Select .pcap file to crack:"
 read -e FILE
@@ -84,7 +92,7 @@ read -e FILE
 echo "List of available wordlists:"
 for wordlist in $(ls -l /root/wordlists/* | awk {'print $9'});
 do
-	echo "Wordlist $((num++)): $wordlist"
+echo "Wordlist $((num++)): $wordlist"
 done
 echo -n "Please select a wordlist:"
 read -e LIST
