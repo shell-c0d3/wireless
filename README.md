@@ -1,7 +1,7 @@
 Wireless
 ----
 
-###### Just a quick and dirty WPA / WPA2 attach script:
+###### Just a quick and dirty WPA / WPA2 attack script:
 
 
 
