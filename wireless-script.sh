@@ -1,6 +1,6 @@
 #!/bin/bash
 # please note that custom word lists need to be put into the folder /root/wordlists, or simply modify the script to point ot your own location.
-
+# testing update
 clear
 # Introduction
 echo "++++++++++++++++++++++++++++++++++++++"
