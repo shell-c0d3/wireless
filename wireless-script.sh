@@ -1,6 +1,10 @@
 #!/bin/bash
-# please note that custom word lists need to be put into the folder /root/wordlists, or simply modify the script to point ot your own location.
-# testing update
+
+# By created by _Synthet1c_
+# Please note that custom wordlists need to be in /root/wordlists directory, or simply modify the script to point to the location of your own wordlists.
+# Script released as is and will not be maintained.
+# Please feel free to used edit or distribute as you see fit.
+
 clear
 # Introduction
 echo "++++++++++++++++++++++++++++++++++++++"

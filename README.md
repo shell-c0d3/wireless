@@ -1,5 +1,9 @@
 wireless
 ========
 
-WPA / WPA2 cracking script
+Just a quick and dirty WPA / WPA2 attach script:
+
+
+
+
 
