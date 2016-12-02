@@ -1,6 +1,15 @@
 #!/bin/bash
 
-# By created by _Synthet1c_
+# By created by:
+#                   _   _          _  __
+#                  | | | |        | |/_ |
+#   ___ _   _ _ __ | |_| |__   ___| |_| | ___
+#  / __| | | | '_ \| __| '_ \ / _ \ __| |/ __|
+#  \__ \ |_| | | | | |_| | | |  __/ |_| | (__
+#  |___/\__, |_| |_|\__|_| |_|\___|\__|_|\___|
+#        __/ |
+#       |___/
+
 # Please note that custom wordlists need to be in /root/wordlists directory, or simply modify the script to point to the location of your own wordlists.
 # Script released as is and will not be maintained.
 # Please feel free to used edit or distribute as you see fit.
